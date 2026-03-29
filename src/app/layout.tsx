@@ -15,6 +15,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Radhey Events Management | Premium Event Planning in Amravati",
   description: "Experience the magic of traditional and modern Indian events with Radhey Events Management. Owned by Pithe Brothers, based in Porgavhan, Amravati.",
+  verification: {
+    google: "GoQKh811uJ7-1k6SowRLwX7q7Je-9XUCW2FKuy6Qp3Y",
+  },
 };
 
 export default function RootLayout({
