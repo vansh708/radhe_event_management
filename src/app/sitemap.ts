@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://radhe-event-management.vercel.app' // Replace with your actual domain if you get one
+  const baseUrl = 'https://radhe-event-management-8b9y.vercel.app'
 
   return [
     {
