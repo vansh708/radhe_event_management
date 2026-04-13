@@ -5,6 +5,11 @@ exports.createBooking = async (req, res) => {
   try {
     const { eventDetails, services, enhancements, totalEstimate } = req.body;
     
+    // Explicitly cast date to ensure Mongoose validation passes
+    if (eventDetails && eventDetails.eventDate) {
+      eventDetails.eventDate = new Date(eventDetails.eventDate);
+    }
+
     const newBooking = new Booking({
       user: req.user ? req.user.id : null, 
       eventDetails,
@@ -16,6 +21,7 @@ exports.createBooking = async (req, res) => {
     const savedBooking = await newBooking.save();
     res.status(201).json(savedBooking);
   } catch (error) {
+    console.error("Booking Creation Error:", error);
     res.status(500).json({ message: "Server Error", error: error.message });
   }
 };
